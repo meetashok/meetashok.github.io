@@ -3,11 +3,15 @@ layout: page
 title: Resume
 permalink: /about/resume
 ---
-  **Ashok Kumar**
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 
-<a href="https://www.linkedin.com/in/ashokkumar42/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="https://github.com/meetashok/"><i class="fa fa-github" aria-hidden="true"></i></a>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 
-<hr>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
 
 Summary
 =======
@@ -38,9 +42,8 @@ Summary
 Experience
 ==========
 
-**Bank of  America** $x$
-
-*Vice President, Senior Data Scientist $\Leftarrow$ AVP, Technology Manager $\Leftarrow$ AVP, Data Scientist     (Nov 2016 - Present)*
+**Bank of  America**  
+*Vice President, Senior Data Scientist $$\Leftarrow$$ AVP, Technology Manager $$\Leftarrow$$ AVP, Data Scientist*     *(Nov 2016 - Present)*
 
 -   Filed two patents in ML space: a) for building an anomaly
     detection algorithm to identify emerging issues in the bank's
@@ -71,7 +74,6 @@ Experience
 -   Leader of the AI/ML technology focus group that caters to 20k+
     associates and drives training, POCs, hackathons, etc.
 
-
 **EXL Service**                                                             
 *Senior Consultant, Decision Analytics (Consultant for American Express)*     *(Mar 2016 - Oct 2016)*
 
@@ -90,7 +92,7 @@ Experience
     1000+ customers enrolled on the platform
 
 **Fractal.ai**   
-*Associate Director, Advanced Analytics $\Leftarrow$ Senior Consultant $\Leftarrow$ Analytics Lead $\Leftarrow$ Sr. Analyst*     *(Apr 2010 - Jun 2015)*
+*Associate Director, Advanced Analytics $$\Leftarrow$$ Senior Consultant $$\Leftarrow$$ Analytics Lead $$\Leftarrow$$ Sr. Analyst*     *(Apr 2010 - Jun 2015)*
 
 -   Constructed a next-best SKU recommendation engine with
     hierarchical sales data using collaborative filtering (+8% lift)

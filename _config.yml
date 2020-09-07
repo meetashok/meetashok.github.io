@@ -36,10 +36,14 @@ minima:
   skin: solarized
 plugins:
   - jekyll-feed
+  - jekyll-katex
 markdown: kramdown
 kramdown:
-  html_to_native: true
-  math_engine: katex
+  math_engine: mathjax
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default.
