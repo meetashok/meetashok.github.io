@@ -30,10 +30,16 @@ twitter_username: meetashok
 github_username:  meetashok
 
 # Build settings
+# theme: jekyll-theme-minimal
 theme: minima
+minima:
+  skin: solarized
 plugins:
   - jekyll-feed
 markdown: kramdown
+kramdown:
+  html_to_native: true
+  math_engine: katex
 
 # Exclude from processing.
 # The following items will not be processed, by default.

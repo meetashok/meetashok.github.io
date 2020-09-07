@@ -42,7 +42,7 @@ Experience
 
 *Vice President, Senior Data Scientist $\Leftarrow$ AVP, Technology Manager $\Leftarrow$ AVP, Data Scientist     (Nov 2016 - Present)*
 
--   Filedz two patents in ML space: a) for building an anomaly
+-   Filed two patents in ML space: a) for building an anomaly
     detection algorithm to identify emerging issues in the bank's
     16k+ ATM network. Using a 2-step SARIMAX approach improved MAPE
     by 20%, b) for designing an industry-first approach for
