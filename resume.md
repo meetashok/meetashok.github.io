@@ -3,8 +3,9 @@ layout: page
 title: Resume
 permalink: /about/resume
 ---
-  **Ashok Kumar**                                                                                      <ashok.iitb@gmail.com>
-  [LinkedIn \|](https://www.linkedin.com/in/ashokkumar42/) [Github](https://github.com/meetashok/)            \(832) 873-3791
+  **Ashok Kumar**
+
+<a href="https://www.linkedin.com/in/ashokkumar42/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="https://github.com/meetashok/"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 <hr>
 
@@ -41,7 +42,7 @@ Experience
 
 *Vice President, Senior Data Scientist $\Leftarrow$ AVP, Technology Manager $\Leftarrow$ AVP, Data Scientist     (Nov 2016 - Present)*
 
--   Filed two patents in ML space: a) for building an anomaly
+-   Filedz two patents in ML space: a) for building an anomaly
     detection algorithm to identify emerging issues in the bank's
     16k+ ATM network. Using a 2-step SARIMAX approach improved MAPE
     by 20%, b) for designing an industry-first approach for

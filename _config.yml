@@ -30,7 +30,7 @@ twitter_username: meetashok
 github_username:  meetashok
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
 markdown: kramdown
