@@ -29,6 +29,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: meetashok
 github_username:  meetashok
 
+show_excerpts: true
+
 # Build settings
 # theme: jekyll-theme-minimal
 theme: minima
@@ -45,6 +47,8 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: coderay
   html_to_native: true
+
+google_analytics: UA-177451444-1
 
 # Exclude from processing.
 # The following items will not be processed, by default.
