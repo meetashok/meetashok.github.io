@@ -45,14 +45,12 @@ Computer science at it's most basic level is problem solving. A typical
 workflow in CS takes an input and returns an output. Information in
 computers is stored in bits (1, 0). 8 bits are equivalent to 1 byte.
 
--   $11001_{2}$  is equivalent to $1\times2^4 + 1\times 2^3 + 0\times2^2 + 0\times2^1 + 1\times 2^0 = (25)_{10}$
-
--   Representing 50 in binary will require 7 bits, 110010
+-   Representing 50 in binary will require 7 bits, 110010. $$(11001)_2$$ is equivalent to $1\times2^4 + 1\times 2^3 + 0\times2^2 + 0\times2^1 + 1\times 2^0 = (25)_{10}$
 
 -   Alphabets can also be represented in binary by creating a mapping.
     ASCII (American Standard Code for Information Interchange) was one
     of the first character encodings that used 8 bits to represent each
-    alphabet, punctuation and digits. For example, 'A' is represented
+    alphabet, punctuation and digits. For example, `A` is represented
     with the binary equivalent of 65. Unicode is a much more flexible
     encoding that uses 1-4 bytes for encoding. As of Mar 2020, it
     supports 140k+ characters including emojis.
@@ -62,8 +60,7 @@ computers is stored in bits (1, 0). 8 bits are equivalent to 1 byte.
     multiple pictures. Similarly, audio can also be digitally encoded
     taking into account pitch, note, volume, etc.
 
-Phone directory search 
-----------------------
+#### Phone directory search 
 
 Let's say we want to search for a particular name in the phone directory
 ($n$ pages), the brute force method of doing it is to go through each
@@ -85,7 +82,7 @@ approach, we need to only look at 10 pages. If the phone book size
 increased to 2048 pages, the binary search will only require us to look
 at just ONE additional page.
 
-### Binary search algorithm for phone book 
+#### Binary search algorithm for phone book 
 
 1.  Open the book and go to the middle of the book
 
@@ -93,23 +90,22 @@ at just ONE additional page.
 
 3.  Else if name is in the first half
 
-4.  1.  Go to the middle of first half
+4.  - Go to the middle of first half
 
-    2.  Go to step 2
+    - Go to step 2
 
 5.  Else if name if in the second half
 
-6.  1.  Go to the middle of second half
+6.  - Go to the middle of second half
 
-    2.  Go to step 2
+    - Go to step 2
 
 7.  Quit as name is not found
 
 The key components of an algorithm are: a) functions, b) conditional
 statements, c) boolean expressions, d) loops, and e) variables.
 
-Homework 
---------
+#### Homework 
 
 The first homework was done using MIT's visual programming language
 called Scratch. It is accessible at this location:
@@ -142,8 +138,7 @@ conditional statements (if), boolean expressions, etc. Few notes:
     this range, then we will run into numerical overflow. Such bugs may
     be hard to detect.
 
-What happens during compilation 
--------------------------------
+#### What happens during compilation 
 
 When C code is compiled, it produces an executable file that contains
 machine code. The compilation step can be split into four main parts:
@@ -171,16 +166,15 @@ If we want to store a number of variables of the same type, using an
 scores of a student from different subjects is a good idea. When
 declaring an `array` in C, we have to specify the size.
 
-{% highlight C %}
+```{javascript}
 // declaring an empty array of size 3  
 int scores[3];  
+
 // declaring an array of size 3 and initializing elements  
-
 int scores[3] = {100, 90, 85};
-{% endhighlight %}
+```
 
-Strings 
--------
+#### Strings 
 
 `char` in C are implemented as mapping to 1-byte integers. For example,
 'A' is mapped to 65. While `string` is not available by default, it can
@@ -216,8 +210,6 @@ complexity of a few common algorithms:
 
 #### Bubble sort 
 
-![image](figures/merge-sort){width="0.9\linewidth"}
-
 We start by comparing the first two elements, if second element is
 smaller than the first, we swap the elements else we move to the next
 pair. This algorithm has the effect of bubbling the maximum value to the
@@ -225,8 +217,7 @@ end of the list. We will need to do a total of $(n-1)$ passes. In the
 first pass, $(n-1)$ comparisons are needed, in the second pass, $(n-1)$
 and so on.
 
-Selection sort 
---------------
+#### Selection sort 
 
 In selection sort, we find the smallest value in each pass and swap it
 with the element in its sorted position. In the first pass, we run
@@ -235,17 +226,17 @@ position with the first element. In the second pass, we start with the
 second element and find the smallest element. We then swap its position
 with the second element.
 
-Merge sort 
-----------
+#### Merge sort 
 
-Figure [\[fig: merge-sort\]](#fig: merge-sort){reference-type="ref"
-reference="fig: merge-sort"} explains the merge sort algorithm with an
+Below figure explains the merge sort algorithm with an
 example. In merge sort, we split the list into two parts, then we sort
 each half independently using merge sort recursively. If the list has
 only one element, we return the element. Then we merge the two halves.
 Merging can be done in linear time. For a list of size $n$, we can do
 halves in $\log_2n$ steps. Hence, the runtime of merge sort is
 $\mathcal{O}\left(n\log(n)\right)$.
+
+![image](https://www.geeksforgeeks.org/wp-content/uploads/Merge-Sort-Tutorial.png)
 
 Lecture 4: Memory 
 =================
@@ -257,7 +248,7 @@ Lecture 4: Memory
     number prefixed by 0x. A byte in hexadecimal just needs two digits
     to be represented fully. For example 0xFF represents
     ($16^1\times15 + 10^0\times15=255$). That's why 24-bit colors can be
-    represented as \#FF0000 (red).
+    represented as `#FF0000` (red).
 
 -   Let's say we declare a variable in C as `int n = 0;`. The address of
     the variable can be found by using `&n`. Similarly, if have a memory
@@ -282,7 +273,7 @@ Lecture 4: Memory
     allocated memory when done using it. We could also use the function
     `strcpy` from the `string.h` library.
 
-{% highlight C%}
+~~~C
 // declare an int
 int n = 100;
 
@@ -300,7 +291,7 @@ printf("%i\n", *p);
 
 // print the address of the pointer
 printf("%p\n", &p);
-{% endhighlight %}
+~~~
 
 Lecture 5: Data Structures 
 ==========================
@@ -379,10 +370,10 @@ particular records much faster.
 2.  SQL injection attack: It is important to parse user input otherwise
     malicious actors could use it to delete information or login without
     proper credentials. When passing parameters to a SQL query in
-    python, we shouldn't use f-strings. Instead, we should use question
+    python, we shouldn't use `f-strings`. Instead, we should use question
     marks to pass parameters in the `db.execute` function.
 
-Tracks: Web 
+Lecture 8: Web Track
 ===========
 
 -   When devices communicate with each other on the internet, they send
@@ -397,12 +388,10 @@ Tracks: Web
     For example, port 21 is reserved for FTP, 25 is reserved for SMTP
     (emails).
 
--   When we type an address like google.com in a web browser, a domain
+-   When we type an address like `google.com` in a web browser, a domain
     name system (DNS) will resolved that to an IP address. DNS servers
     maintain a mapping between the URL names and IP addresses. In a URL
-    like http://example.com, the http part stands for hyper-text
+    like `http://example.com`, the http part stands for hyper-text
     transfer protocol, which tells the recipient about the contents of
     the packets.
-
-\bibliographystyle{unsrt}
 
