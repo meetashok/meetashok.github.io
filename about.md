@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img style="float: right; margin-left: 20px; margin-bottom: 10px; height: 150px; filter: grayscale(100%);" src=  
+<img style="float: right; margin-left: 10px; margin-bottom: 10px; height: 120px; filter: grayscale(100%);" src=  
 "https://pbs.twimg.com/profile_images/1287075287264645120/6ckyckA8_400x400.jpg" alt="Profile picture">
 
 #### Hi, I am Ashok Kumar 🚀
@@ -17,7 +17,3 @@ I am an experienced data scientist with deep knowledge in machine learning, deep
 <blockquote title="Blockquote title">
   <p>"If you can't explain it to a six year old, you don't really understand it." - Richard Feynman</p>
 </blockquote>
-
-`machine-learning` `deep-learning` `python` `pytorch` `tensorflow` `nlp` `bert` `programming`
-
-Tags: `cs50` `review` `lecture-notes` `programming` `data-structures`
