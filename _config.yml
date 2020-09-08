@@ -31,7 +31,7 @@ show_excerpts: true
 
 # Build settings
 # theme: jekyll-theme-minimal
-theme: minima
+theme: jekyll-theme-minimal
 minima:
   skin: dark
 plugins:
