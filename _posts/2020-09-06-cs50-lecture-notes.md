@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CS50 Lecture Notes"
+title:  "CS50 Lecture Notes 💻"
 date:   2020-09-07
 ---
 <script type="text/x-mathjax-config">
@@ -13,8 +13,21 @@ MathJax.Hub.Config({
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-CS50 is offered by Harvard University. I started this course in Aug 2020
-on the edX platform. Course page: [CS50](https://cs50.harvard.edu/x/2020/)
+Tags: `cs50` `review` `lecture-notes` `programming` `data-structures`
+
+<hr>
+
+<a href="https://twitter.com/cs50">
+    <img style="float: right; margin: 10px; height: 100px" src=  
+"https://pbs.twimg.com/profile_images/829508699412652033/5TVdLqmu_400x400.jpg"
+                    alt="CS50 Twitter Profile">
+</a>
+
+[CS50](https://cs50.harvard.edu/x/2020/) is an introductory computer science and programming fundamentals course offered by Harvard University. I chanced upon seeing it as the first recommendation in this excellent [thread](https://twitter.com/RandallKanna/status/1274133745222615041) on building your own CS degree by [@RandallKanna](https://twitter.com/RandallKanna).
+
+The course covers a lot of ground in 8 highly energetic lectures led by <a href="https://cs.harvard.edu/malan/">Prof. David J Malan</a>. Initial lectures focus on C but ample time is spent on Python and SQL. Being a self-taught programmer and data scientist, I always felt that my understanding of CS fundamentals like `pointers`, `heap`, `stack`, data structures, etc. was inexplicit. This course helped in me in solidifying my knowledge of those concepts. If you have taken other MOOCs online, you will find this course to be somewhat unique in a fun way. The lectures are delivered in an auditorium with 100s of people and the professor does an excellent job of engaging with students and answering their questions. On completing all assigments, a certificate is provided which can be added to your LinkedIn profile.  
+
+Below are my notes from the lectures:
 
 Lecture 0: Computational thinking, Scratch
 ==========================================
@@ -33,17 +46,17 @@ computers is stored in bits (1, 0). 8 bits are equivalent to 1 byte.
     encoding that uses 1-4 bytes for encoding. As of Mar 2020, it
     supports 140k+ characters including emojis.
 
--   Similarly, photos can be broken into pixel, and each pixel can be
+-   Similarly, photos can be broken into pixels, and each pixel can be
     encoded as a tuple of 3 RGB values. Videos can be encoded as
     multiple pictures. Similarly, audio can also be digitally encoded
-    taking into account pitch, note, volume, etc.
+    by taking into account pitch, note, volume, etc.
 
-#### Phone directory search 
+#### Phone directory (Binary search)
 
 Let's say we want to search for a particular name in the phone directory
-($n$ pages), the brute force method of doing it is to go through each
+($n$ pages). The brute force method of doing so is to go through each
 page from start to finish or until we find the name. In the worst case,
-we will need to visit $n$ pages before finding the name. A slight
+we will need to visit $n$ pages before finding the sought name. A slight
 improvement will be to traverse 2 pages at a time. So, we start with
 page 2, then go to page 4, then page 6 and so on. If we happen to skip
 over the name, then we can go back to the previous page and search for
@@ -54,11 +67,11 @@ We can extend this approach, and start at the middle of the phone book.
 Then based on the names on the page, we will either search it in the
 first half or the second. At each step we will keep splitting the search
 space by half. Via this approach, we will need to visit $\log_2(n)$
-pages in the worst case. If the book at 1,024 pages. Then the first
-approach will require us to visit 1000 pages but with binary search
-approach, we need to only look at 10 pages. If the phone book size
-increased to 2048 pages, the binary search will only require us to look
-at just ONE additional page.
+pages in the worst case. For a book that has 1,024 pages, the first
+approach will require us to visit 1,204 pages but with binary search
+approach, only 10 pages need to looked at. If the phone book size
+increased to 2,048 pages, the binary search will only require us to look
+at just 1 additional page.
 
 #### Binary search algorithm for phone book 
 ~~~
@@ -67,7 +80,7 @@ at just ONE additional page.
 3. Else if name is in the first half
   4.1 Go to the middle of first half
   4.2 Go to step 2
-5. Else if name if in the second half
+5. Else if name is in the second half
   6.1 Go to the middle of second half
   6.2 Go to step 2
 7. Quit as name is not found
@@ -100,8 +113,8 @@ conditional statements (if), boolean expressions, etc. Few notes:
     end of the first loop, whereas while loop checks the condition at
     the start.
 
--   Float precision[@floatingpoint]: in C takes up 4 bytes of space, and
-    double takes 8 bytes. Float precision is the problem when
+-   Float datatype in C takes up 4 bytes of space, and
+    double takes 8 bytes
 
 -   Numerical overflow: C stores datatype `int` with a storage size of
     4-bytes. This will give it a range of $[-2^{31},\ 2^{31}]$. If we do
@@ -116,18 +129,18 @@ machine code. The compilation step can be split into four main parts:
 
 1.  Preprocessing: In this step all the `#include` statements are
     replaced by the corresponding lines from the header files. Header
-    files contain references to functions declared in a library
+    files contain references to functions declared in a library.
 
 2.  Compiling: This step converts the source code into assembly language
     (machine code). This will typically have instructions that the CPU
     can understand.
 
 3.  Assembling: This step converts the assembly code into binary code
-    (0s and 1s)
+    (0s and 1s).
 
 4.  Linking: If multiple files are involved in a source code, this step
     will merge the binary code from all files into a single executable
-    file
+    file.
 
 Lecture 2: Arrays 
 =================
@@ -135,7 +148,7 @@ Lecture 2: Arrays
 If we want to store a number of variables of the same type, using an
 `array` could make sense. For example, using an `array` to store the
 scores of a student from different subjects is a good idea. When
-declaring an `array` in C, we have to specify the size.
+declaring an `array` in C, we have to specify the size. We can loop-up any index in the array in constant time. 
 
 {% highlight C %}
 // declaring an empty array of size 3  
@@ -148,13 +161,13 @@ int scores[3] = {100, 90, 85};
 #### Strings 
 
 `char` in C are implemented as mapping to 1-byte integers. For example,
-'A' is mapped to 65. While `string` is not available by default, it can
+`A` is mapped to 65. While `string` is not available by default, it can
 be implemented as an `array` of `char`. One peculiarity with strings is
 that they can be of arbitrary length. So, to signify the end of a
 string, we use a null character, $\backslash0$ which maps to a 1-byte
-integer of all zeros. So, a string 'EMMA' will take 5 bytes of memory.
-When an array of strings is initialized with with values 'EMMA', 'ADAM'
-and 'JOHNSON', the data structure will occupy 18 bytes of memory
+integer of all zeros. So, a string `EMMA` will take 5 bytes of memory.
+When an array of strings is initialized with with values `EMMA`, `ADAM`
+and `JOHNSON`, the data structure will occupy 18 bytes of memory
 sequentially.
 
 Lecture 3: Algorithms 
@@ -203,19 +216,24 @@ Merging can be done in linear time. For a list of size $n$, we can do
 halves in $\log_2n$ steps. Hence, the runtime of merge sort is
 $\mathcal{O}\left(n\log(n)\right)$.
 
-![image](https://www.geeksforgeeks.org/wp-content/uploads/Merge-Sort-Tutorial.png)
+<figure class="image">
+  <img src="https://www.geeksforgeeks.org/wp-content/uploads/Merge-Sort-Tutorial.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%">
+  <figcaption><p style="text-align: center;"><em>Source: https://www.geeksforgeeks.org</em></p></figcaption>
+</figure>
+
+<!-- ![image](https://www.geeksforgeeks.org/wp-content/uploads/Merge-Sort-Tutorial.png) -->
 
 Lecture 4: Memory 
 =================
 
 -   Computer memory can be thought of as divided into bytes. If a
-    machine has 1GB of RAM, then there will be $\approx$1 billion bytes
+    machine has 1GB of RAM, then there will be $\sim $1 billion bytes
     (exactly $2^{10}\times2^{10}\times2^{10}$ bytes). Each byte is
     allocated an address. This is often represented with a hexadecimal
-    number prefixed by 0x. A byte in hexadecimal just needs two digits
-    to be represented fully. For example 0xFF represents
+    number prefixed by `0x`. A byte in hexadecimal just needs two digits
+    to be represented fully. For example `0xFF` represents
     ($16^1\times15 + 10^0\times15=255$). That's why 24-bit colors can be
-    represented as `#FF0000` (red).
+    represented as `#FF0000` 🔴.
 
 -   Let's say we declare a variable in C as `int n = 0;`. The address of
     the variable can be found by using `&n`. Similarly, if have a memory
@@ -232,7 +250,7 @@ Lecture 4: Memory
 
 -   Further, if we declare a string as `char *s = "EMMA"; char *t;` and
     then assign `t = s;`. Then we have assigned the memory address
-    stored in `s` to `t`. The value `"EMMA"` has not been copied. As
+    stored in `s` to `t`. The value `EMMA` has not been copied. As
     such, if we make a change to the value of `s`, `t` will also change.
     For copying strings, we must first allocate some space using
     `malloc` and then copy one character at a time ensuring that we also
@@ -263,18 +281,18 @@ printf("%p\n", &p);
 Lecture 5: Data Structures 
 ==========================
 
--   The advantage of using arrays is that we can retrieve item at any
+-   **Array**: The advantage of using arrays is that we can retrieve items at any
     index in constant time. Further, if the array is sorted then we can
     search for an item in $\mathcal{O}(\log(n))$ time. However, when
-    using arrays, we have to declare the size of the array. If at a
+    using arrays, we have to declare the size of the array at the time of initialization. If at a
     later point we need to add another element to the array, then we
     must allocate another location in memory, copy each element one at a
-    time and then insert the new element. So, insertion in array
+    time and then insert the new element. So, insertion operation for an array
     requires linear time.
 
--   An alternative way of storing a list of numbers is to use a linked
-    list. Let's say we wanted to store 4 integers. Linked list will
-    store these randomly across the available. But so that we are able
+-   **Linked List**: An alternative way of storing a list of numbers is to use a linked
+    list. Let's say we wanted to store 4 integers. Linked list
+    stores this data randomly in the available space. But so that we are able
     to discover all numbers, we need an additional storage for each
     number to save a pointer to the next number in the list. Key
     advantage of a linked list is that we can insert new values without
@@ -283,7 +301,7 @@ Lecture 5: Data Structures
     to a particular index in a linked list, we have to traverse all
     preceding elements. So, this operation is $\mathcal{O}(n)$.
 
--   A hashtable is a mix of an array and a linked list. To store
+-   **Hashtable**: A hashtable is a mix of an array and a linked list. To store
     elements, a hashtable uses a hash function to choose the location in
     an array to put them at. For example, to store names in a hashtable,
     we could use the hash function as the first letter of the name. Egon
@@ -297,14 +315,13 @@ Lecture 5: Data Structures
     hash function that can distribute the elements evenly across the
     array.
 
--   Trie uses a lot of memory but has the advantage that search and
-    addition of new elements can be done in constant time. Trie is a
+-   **Trie**: This data structure uses a lot of memory but has the advantage that search and addition of new elements can be done in constant time. Trie is a
     linked list where each node is an array. In order to store names in
     a trie structure, we could store the first letter in an array of
     size 26. Then have a linked array to store the second letter and so
-    on.
+    on. A name can be searches in constant time. 
 
--   Binary search trees have the advantage that elements can be searched
+-   **Binary search trees** have the advantage that elements can be searched
     in $\mathcal{O}(\log(n))$. Key rule of binary search trees is that
     each node in the left sub-tree is smaller than the parent node, and
     each node in the right sub-tree is larger than the parent node. This
@@ -323,7 +340,7 @@ gets compiled to machine language at the runtime.
 Lecture 7: SQL 
 ==============
 
-If we want to look for a particular record in csv file, we will need to
+If we want to look for a particular record in `csv` file, we will need to
 load the file in memory and then parse the file one record at a time.
 With csv files, we can only search in linear time. Databases have the
 advantage of improving on this. They implemented sophisticated data
@@ -345,19 +362,19 @@ Lecture 8: Web Track
 
 -   When devices communicate with each other on the internet, they send
     messages to each other. The sending and receipt of the messages
-    follow established protocols. One such protocol is TCP/IP which
+    follows established protocols. One such protocol is TCP/IP which
     stands for transmission control protocol/internet protocol. When we
     send letters in real world, we need to include the recipient and
     sender's addresses. Similarly, when sending messages over internet,
     we have to include the IP addresses of the recipient and sender.
     Further to differentiate between packets (webpages, email, file
-    transfer, etc.), we include a port number in the recipient address.
-    For example, port 21 is reserved for FTP, 25 is reserved for SMTP
-    (emails).
+    transfer, etc.), we include a port number. For example, port 21 is reserved for FTP, 25 is reserved for SMTP (emails).
 
 -   When we type an address like `google.com` in a web browser, a domain
     name system (DNS) will resolved that to an IP address. DNS servers
     maintain a mapping between the URL names and IP addresses. In a URL
-    like `http://example.com`, the http part stands for hyper-text
+    like `http://example.com`, the `http` part stands for hyper-text
     transfer protocol, which tells the recipient about the contents of
     the packets.
+
+For my final project I built a simple note-taking app. It can be found here: [https://github.com/meetashok/simplenotes](https://github.com/meetashok/simplenotes).
