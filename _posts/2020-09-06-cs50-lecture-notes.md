@@ -1,24 +1,8 @@
 ---
 layout: post
 title:  "CS50 Lecture Notes"
-date:   2020-09-07 
-categories: nlp 
+date:   2020-09-07
 ---
-<script>
-const katex = require('katex');
-
-renderMathInElement(
-    // document.querySelector(".all"),
-    {
-        delimiters: [
-            {left: "$$", right: "$$", display: true},
-            {left: "\\[", right: "\\]", display: true},
-            {left: "$", right: "$", display: false},
-            {left: "\\(", right: "\\)", display: false}
-        ]
-    }
-);
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -28,15 +12,9 @@ MathJax.Hub.Config({
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-CS50: Course notes
-==================
-
-------------------------------------------------------------------------
 
 CS50 is offered by Harvard University. I started this course in Aug 2020
-on the edX platform.
-
-Course page: <https://cs50.harvard.edu/x/2020/>
+on the edX platform. Course page: [CS50](https://cs50.harvard.edu/x/2020/)
 
 Lecture 0: Computational thinking, Scratch
 ==========================================
@@ -83,24 +61,17 @@ increased to 2048 pages, the binary search will only require us to look
 at just ONE additional page.
 
 #### Binary search algorithm for phone book 
-
-1.  Open the book and go to the middle of the book
-
-2.  If name found on the page: STOP
-
-3.  Else if name is in the first half
-
-4.  - Go to the middle of first half
-
-    - Go to step 2
-
-5.  Else if name if in the second half
-
-6.  - Go to the middle of second half
-
-    - Go to step 2
-
-7.  Quit as name is not found
+~~~
+1. Open the book and go to the middle of the book
+2. If name found on the page: STOP
+3. Else if name is in the first half
+  4.1 Go to the middle of first half
+  4.2 Go to step 2
+5. Else if name if in the second half
+  6.1 Go to the middle of second half
+  6.2 Go to step 2
+7. Quit as name is not found
+~~~
 
 The key components of an algorithm are: a) functions, b) conditional
 statements, c) boolean expressions, d) loops, and e) variables.
@@ -166,13 +137,13 @@ If we want to store a number of variables of the same type, using an
 scores of a student from different subjects is a good idea. When
 declaring an `array` in C, we have to specify the size.
 
-```{javascript}
+{% highlight C %}
 // declaring an empty array of size 3  
 int scores[3];  
 
 // declaring an array of size 3 and initializing elements  
 int scores[3] = {100, 90, 85};
-```
+{% endhighlight %}
 
 #### Strings 
 
@@ -198,14 +169,10 @@ define $\Omega$ as the complexity in best case scenario. Big-O
 complexity of a few common algorithms:
 
 1.  Linear search: $\mathcal{O}(n)$
-
 2.  Binary search: $\mathcal{O}\left(\log(n)\right)$ (if the data is
     sorted)
-
 3.  Bubble sort: $\mathcal{O}(n^2)$
-
 4.  Selection sort: $\mathcal{O}(n^2)$
-
 5.  Merge sort: $\mathcal{O}\left(n\log(n)\right)$
 
 #### Bubble sort 
@@ -273,7 +240,7 @@ Lecture 4: Memory
     allocated memory when done using it. We could also use the function
     `strcpy` from the `string.h` library.
 
-~~~C
+{% highlight C %}
 // declare an int
 int n = 100;
 
@@ -291,7 +258,7 @@ printf("%i\n", *p);
 
 // print the address of the pointer
 printf("%p\n", &p);
-~~~
+{% endhighlight %}
 
 Lecture 5: Data Structures 
 ==========================
@@ -394,4 +361,3 @@ Lecture 8: Web Track
     like `http://example.com`, the http part stands for hyper-text
     transfer protocol, which tells the recipient about the contents of
     the packets.
-

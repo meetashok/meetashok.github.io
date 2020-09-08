@@ -33,17 +33,18 @@ github_username:  meetashok
 # theme: jekyll-theme-minimal
 theme: minima
 minima:
-  skin: solarized
+  skin: dark
 plugins:
   - jekyll-feed
-  - jekyll-katex
+  # - jekyll-katex
 markdown: kramdown
 kramdown:
   math_engine: mathjax
   input: GFM
   auto_ids: true
   hard_wrap: false
-  syntax_highlighter: rouge
+  syntax_highlighter: coderay
+  html_to_native: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
