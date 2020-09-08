@@ -43,7 +43,7 @@ kramdown:
   input: GFM
   auto_ids: true
   hard_wrap: false
-  syntax_highlighter: coderay
+  syntax_highlighter: rogue
   html_to_native: true
 
 google_analytics: UA-177451444-1
