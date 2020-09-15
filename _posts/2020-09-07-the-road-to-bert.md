@@ -52,14 +52,13 @@ learning models have two key competitive advantages:
 
 As a result, while classical models hit a performance plateau, deep
 learning models are likely to deliver higher performance as the number
-of layers & input data volume increases (fig
-[\[fig: bayes-error\]](#fig: bayes-error){reference-type="ref"
-reference="fig: bayes-error"}).
+of layers & input data volume increases. 
 
-\centering
-![Deep learning
-performance[]{label="fig: bayes-error"}](bayes-error.png){#fig: bayes-error
-width="50%"}
+<figure>
+    <img src="../assets/bert/bayes-error.png">
+    <caption><p style="text-align: center">Deep learning performance</p></caption>
+</figure>
+
 
 Peculiarities of language
 -------------------------
@@ -456,5 +455,3 @@ customers to comprehend a plethora of reviews.
 ![Glassdoor summarizes the reviews to highlight key positive & negative
 aspects[]{label="fig: dialogue"}](glassdoor){#fig: dialogue
 width="0.6\linewidth"}
-
-[^1]: <https://twitter.com/MIT_CSAIL/status/1294282794722643968>

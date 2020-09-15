@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Ashok Kumar
+title: exploded gradient
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
   Tutorials and thoughts for topics in machine learning, data science, programming, python and all things data. 
@@ -27,7 +27,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: meetashok
 github_username:  meetashok
 
-show_excerpts: true
+# show_excerpts: true
 
 # Build settings
 # theme: jekyll-theme-minimal
@@ -36,8 +36,9 @@ minima:
   skin: dark
 plugins:
   - jekyll-feed
-  # - jekyll-katex
+  - jekyll-katex
 markdown: kramdown
+highlighter: rogue
 kramdown:
   math_engine: mathjax
   input: GFM
@@ -45,6 +46,7 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rogue
   html_to_native: true
+  parse_block_html: true
 
 google_analytics: UA-177451444-1
 
